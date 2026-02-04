@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap");
+
+:root {
+	--primary-pink: #ff4d6d;
+	--secondary-pink: #ff758f;
+	--light-pink: #ffb3c1;
+	--white: #ffffff;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Quicksand", sans-serif;
+	background-color: #fff0f3;
+	overflow-x: hidden;
+}
+
+#root {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.proposal-container {
+	text-align: center;
+	padding: 2rem;
+	max-width: 500px;
+	width: 90%;
+	z-index: 10;
+	background: rgba(255, 255, 255, 0.8);
+	backdrop-filter: blur(10px);
+	border-radius: 20px;
+	box-shadow: 0 10px 30px rgba(255, 77, 109, 0.2);
+}
+
+.valentine-image {
+	width: 250px;
+	height: 250px;
+	object-fit: contain;
+	margin-bottom: 2rem;
+	border-radius: 50%;
+	border: 5px solid var(--primary-pink);
+	animation: float 3s ease-in-out infinite;
+}
+
+h1 {
+	font-family: "Dancing Script", cursive;
+	color: var(--primary-pink);
+	font-size: 3rem;
+	margin-bottom: 1.5rem;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button-group {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5rem;
+	flex-wrap: wrap;
+	min-height: 100px;
+}
+
+.btn {
+	padding: 1rem 2rem;
+	font-size: 1.2rem;
+	font-weight: 600;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-yes {
+	background-color: var(--primary-pink);
+	color: white;
+}
+
+.btn-yes:hover {
+	background-color: #ff0a3d;
+	transform: scale(1.1);
+}
+
+.btn-no {
+	background-color: #eee;
+	color: #333;
+	position: relative;
+}
+
+/* Floating Hearts Background */
+.heart-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.heart {
+	position: absolute;
+	color: var(--primary-pink);
+	font-size: 1.5rem;
+	animation: rise 10s linear infinite;
+	opacity: 0;
+}
+
+@keyframes rise {
+	0% {
+		transform: translateY(100vh) scale(0);
+		opacity: 0;
+	}
+	20% {
+		opacity: 0.6;
+	}
+	100% {
+		transform: translateY(-10vh) scale(1.5);
+		opacity: 0;
+	}
+}
+
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-15px);
+	}
+}
+
+@media (max-width: 480px) {
+	h1 {
+		font-size: 2.2rem;
+	}
+	.valentine-image {
+		width: 180px;
+		height: 180px;
+	}
+	.btn {
+		padding: 0.8rem 1.5rem;
+		font-size: 1rem;
+	}
+}
